@@ -25,10 +25,13 @@ var interval = setInterval(function () {
     }
 
     // Convert a number to a hexadecimal using toString(16)
-    R = Number(theHour()).toString(16);
-    G = Number(theMinute()).toString(16);
-    B = Number(theSecond()).toString(16);
-    hexStr = R + G + B;
+    var R = Number(theHour()).toString(16);
+    var G = Number(theMinute()).toString(16);
+    var B = Number(theSecond()).toString(16);
+    if (R.length == 1) R = R + R;
+    if (G.length == 1) G = G + G;
+    if (B.length == 1) B = B + B;
+    var hexStr = R + G + B;
 
     $('.hours').textContent = R;
     $('.minutes').textContent = G;
